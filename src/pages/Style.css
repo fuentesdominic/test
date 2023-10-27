@@ -1,0 +1,110 @@
+  .full-register-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .register-title-div {
+    -webkit-backdrop-filter: blur(20px) brightness(100%);
+    backdrop-filter: blur(20px) brightness(100%);
+    margin-top: 10rem;
+    border: 1px solid;
+    border-color: #000000;
+    box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    padding: 3rem;
+    height: 250px;
+    width: 1200px;
+    background: linear-gradient(30deg, rgba(32, 71, 108, 0.8) 0%, rgba(185, 165, 116, 0.9) 100%);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .register-title {
+    font-size: 72px;
+    padding: 1rem;
+    z-index: 2;
+    color: rgba(255, 255, 255, 1)
+  }
+
+  .register-big-ellipse {
+    position: absolute;
+    background: linear-gradient(160deg, rgba(31.61, 71.53, 108.38, 0.78) 30%, rgba(184.88, 165.46, 115.55, 0.91) 100%);
+    right: 120px;
+    top: 45px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+  }
+
+  .register-small-ellipse {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    right: 100px;
+    top: 115px;
+    border-radius: 50%;
+    background: linear-gradient(75deg, rgb(27.47, 56.43, 99.88) 0%, rgb(184.88, 165.46, 115.55) 100%);
+  }
+
+  .register-polygon {
+    clip-path: polygon(40% 5%, 55% 100%, 25% 100%);
+    transform: rotate(40deg);
+    top: 136px;
+    left: 75px;
+    z-index: 1;
+    position: absolute;
+    background: linear-gradient(180deg, #1B3864 10%, #B9A574 100%);
+  }
+
+  .input-label {
+    position: absolute;
+    top: 9px;
+    left: 3.5rem;
+    font-size: 22px;
+    color: #000000;
+    font-weight: 500;
+    font-family: sans-serif;
+    white-space: nowrap;
+    transition: all 0.3s
+  }
+
+  .register-form {
+    margin: 1rem;
+  }
+
+  .input-container {
+    position: relative;
+    margin: 2rem;
+  }
+
+  .input-container input:focus + span,
+  .input-container input:valid + span {
+    position: absolute;
+    top: -14px;
+    font-size: 14px;
+  }
+
+  input::placeholder {
+    font-size: 22px;
+    color: #000000;
+    position: absolute;
+    top: 9px;
+    white-space: nowrap;
+    font-weight: 500;
+    font-family: sans-serif;
+    left: 3.5rem;
+  }
+
+  .input-form {
+    background-color: #1b386326;
+    border-radius: 50px;
+    border: 2px solid #1b212b26;
+    height: 42px;
+    position: relative;
+    width: 750px;
+  }
