@@ -1,29 +1,28 @@
 import { useState } from "react";
 import "../pages/Style.css";
+import { IoMdMail } from 'react-icons/io';
+import { FaUserAlt } from 'react-icons/fa';
+import { FaEye } from 'react-icons/fa';
+import { FaEyeSlash } from 'react-icons/fa';
 // import { useNavigate } from "react-router";
 
 const Register = () => {
 
   // let navigate = useNavigate()
 
-  const [isFocused, setIsFocused] = useState(false);
-
-  const handleFocus = () => {
-    setIsFocused(true);
-  };
-
-  const handleBlur = (e) => {
-    if (!e.target.value) {
-      setIsFocused(false);
-    }
-  };
-
   const [formValues, setFormValues] = useState({
-    name: '',
     email: '',
+    username: '',
     password: '',
     confirmPassword: ''
   });
+
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isPasswordButtonVisible, setIsPasswordButtonVisible] = useState(true);
+
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
@@ -50,26 +49,86 @@ const Register = () => {
       <form className="register-form" onSubmit={handleSubmit}>
 
         <div className="input-container">
-          <span className={`input-label ${isFocused ? 'focused' : ''}`} htmlFor="email">Email</span>
+          <IoMdMail className="mail-icon" />
+          <span className="input-label" htmlFor="email">Email</span>
           <input
             onChange={handleChange}
             name="email"
             type="email"
-            placeholder="Email"
-            onFocus={handleFocus}
-            onBlur={handleBlur}
             className="input-form"
             value={formValues.email}
             required
           />
         </div>
 
-        <div className="input-container-2">
-          <span htmlFor="name">Name</span>
-          
+        <div className="input-container">
+          <FaUserAlt className="user-icon" />
+          <span className="input-label" htmlFor="username">Username</span>
+          <input
+            onChange={handleChange}
+            name="username"
+            type="username"
+            className="input-form"
+            value={formValues.name}
+            required
+          />
         </div>
+
+        <div className="input-container">
+          <span className="input-label" htmlFor="password">Password</span>
+          <input
+            onChange={handleChange}
+            name="password"
+            type="password"
+            className="input-form"
+            value={formValues.password}
+            required
+          />
+          {isPasswordButtonVisible && (
+            <button
+              type="button"
+              onClick={togglePasswordVisibility}
+              className="show-hide-btn"
+            >
+              {isPasswordVisible ?
+                <FaEye />
+                :
+                <FaEyeSlash />}
+            </button>
+          )}
+        </div>
+
+        <div className="input-container">
+          <span className="input-label" htmlFor="confirmPassword"> Confirm Password</span>
+          <input
+            onChange={handleChange}
+            name="confirmPassword"
+            type={isPasswordVisible ? "text" : "password"}
+            className="input-form"
+            value={formValues.confirmPassword}
+            required
+          />
+          {isPasswordButtonVisible && (
+            <button
+              type="button"
+              onClick={togglePasswordVisibility}
+              className="show-hide-btn"
+            >
+              {isPasswordVisible ?
+                <FaEye />
+                :
+                <FaEyeSlash />}
+            </button>
+          )}
+        </div>
+
       </form>
-      <button className="register-btn">Get Started</button>
+      
+        <button disabled={!formValues.email ||
+          (!formValues.password &&
+            formValues.confirmPassword === formValues.password
+          )}
+           className="register-btn">Get Started</button>
       <div className="btm-div">
         <p className="btm-question">Already have an account?</p>
         <h3 className="btm-link" to="/sign-in">Login</h3>

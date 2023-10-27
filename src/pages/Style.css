@@ -63,14 +63,13 @@
 
   .input-label {
     position: absolute;
-    top: 9px;
-    left: 3.5rem;
-    font-size: 22px;
+    top: -17px;
+    left: 4rem;
+    font-size: 16px;
     color: #000000;
     font-weight: 500;
     font-family: sans-serif;
     white-space: nowrap;
-    transition: all 0.3s
   }
 
   .register-form {
@@ -82,22 +81,9 @@
     margin: 2rem;
   }
 
-  .input-container input:focus + span,
-  .input-container input:valid + span {
-    position: absolute;
-    top: -14px;
-    font-size: 14px;
-  }
-
-  input::placeholder {
-    font-size: 22px;
-    color: #000000;
-    position: absolute;
-    top: 9px;
-    white-space: nowrap;
-    font-weight: 500;
-    font-family: sans-serif;
-    left: 3.5rem;
+  input {
+    padding-left: 4rem;
+    font-size: 18px;
   }
 
   .input-form {
@@ -107,4 +93,44 @@
     height: 42px;
     position: relative;
     width: 750px;
+  }
+
+  .mail-icon {
+    position: absolute;
+    font-size: 18px;
+    left: 1.6rem;
+    top: 15px;
+  }
+
+  .user-icon {
+    position: absolute;
+    font-size: 18px;
+    left: 1.6rem;
+    top: 15px;
+  } 
+
+  .show-hide-btn {
+    position: absolute;
+    left: 1.3rem;
+    top: 15px;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+  }
+
+  .register-btn {
+    background-color: #1B3864;
+    border-radius: 50px;
+    height: 42px;
+    width: 275px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 1);
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+  }
+
+  .register-btn:hover {
+    background-color: #39609b;
+    transform: scale(1.01);
   }
