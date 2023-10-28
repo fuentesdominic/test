@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom"
-import "../pages/Style.css";
+import "../register/Register.css";
 import { IoMdMail } from 'react-icons/io';
 import { FaUserAlt } from 'react-icons/fa';
 import { FaEye } from 'react-icons/fa';
@@ -22,14 +22,14 @@ const Register = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isPasswordButtonVisible, setIsPasswordButtonVisible] = useState(true);
 
-  
+
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
-  
+
   // logic for confrim password eyes
-  const [isConfirmPasswordVisible, setisConfirmPasswordVisible] =useState(false);
-  const [isConfirmPasswordButtonVisible, setIsConfirmPasswordButtonVisible] =useState(true);
+  const [isConfirmPasswordVisible, setisConfirmPasswordVisible] = useState(false);
+  const [isConfirmPasswordButtonVisible, setIsConfirmPasswordButtonVisible] = useState(true);
 
   const toggleConfirmPasswordVisibility = () => {
     setisConfirmPasswordVisible(!isConfirmPasswordVisible);
@@ -43,7 +43,7 @@ const Register = () => {
     e.preventDefault();
     // Handle middleware
 
-    // Navigate('/')
+    // navigate('/')
   }
 
   return (
@@ -59,39 +59,39 @@ const Register = () => {
       </div>
       <form className="register-form" onSubmit={handleSubmit}>
 
-        <div className="input-container">
-          <IoMdMail className="mail-icon" />
-          <span className="input-label" htmlFor="email">Email</span>
+        <div className="r-input-container">
+          <IoMdMail className="r-mail-icon" />
+          <span className="r-input-span" htmlFor="email">Email</span>
           <input
             onChange={handleChange}
             name="email"
             type="email"
-            className="input-form"
+            className="r-input-form"
             value={formValues.email}
             required
           />
         </div>
 
-        <div className="input-container">
-          <FaUserAlt className="user-icon" />
-          <span className="input-label" htmlFor="username">Username</span>
+        <div className="r-input-container">
+          <FaUserAlt className="r-user-icon" />
+          <span className="r-input-span" htmlFor="username">Username</span>
           <input
             onChange={handleChange}
             name="username"
             type="username"
-            className="input-form"
+            className="r-input-form"
             value={formValues.name}
             required
           />
         </div>
 
-        <div className="input-container">
-          <span className="input-label" htmlFor="password">Password</span>
+        <div className="r-input-container">
+          <span className="r-input-span" htmlFor="password">Password</span>
           <input
             onChange={handleChange}
             name="password"
             type={isPasswordVisible ? "text" : "password"}
-            className="input-form"
+            className="r-input-form"
             value={formValues.password}
             required
           />
@@ -99,7 +99,7 @@ const Register = () => {
             <button
               type="button"
               onClick={togglePasswordVisibility}
-              className="show-hide-btn"
+              className="r-show-hide-btn"
             >
               {isPasswordVisible ?
                 <FaEye />
@@ -109,43 +109,43 @@ const Register = () => {
           )}
         </div>
 
-        
+
         {formValues.password && (
-        <div className="input-container">
-          <span className="input-label" htmlFor="confirmPassword"> Confirm Password</span>
-          <input
-            onChange={handleChange}
-            name="confirmPassword"
-            type={isConfirmPasswordVisible ? "text" : "password"}
-            className="input-form"
-            value={formValues.confirmPassword}
-            required
-          />
-          {isConfirmPasswordButtonVisible && (
-            <button
-              type="button"
-              onClick={toggleConfirmPasswordVisibility}
-              className="show-hide-btn"
-            >
-              {isConfirmPasswordVisible ?
-                <FaEye />
-                :
-                <FaEyeSlash />}
-            </button>
-          )}
-        </div>
-          )}
-      </form>
+          <div className="r-input-container">
+            <span className="r-input-span" htmlFor="confirmPassword"> Confirm Password</span>
+            <input
+              onChange={handleChange}
+              name="confirmPassword"
+              type={isConfirmPasswordVisible ? "text" : "password"}
+              className="r-input-form"
+              value={formValues.confirmPassword}
+              required
+            />
+            {isConfirmPasswordButtonVisible && (
+              <button
+                type="button"
+                onClick={toggleConfirmPasswordVisibility}
+                className="r-show-hide-btn"
+              >
+                {isConfirmPasswordVisible ?
+                  <FaEye />
+                  :
+                  <FaEyeSlash />}
+              </button>
+            )}
+          </div>
+        )}
 
         <button disabled={!formValues.email ||
           (!formValues.password &&
             formValues.confirmPassword === formValues.password
           )}
-           className="register-btn">Get Started</button>
-      <div className="btm-div">
-        <p className="btm-question">Already have an account?</p>
-        <Link className="btm-link" to="/login">Login</Link>
-      </div>
+          className="register-btn">Get Started</button>
+        <div className="r-btm-div">
+          <p className="r-btm-question">Already have an account?</p>
+          <Link className="r-btm-link" to="/login">Login</Link>
+        </div>
+      </form>
     </div>
   );
 }

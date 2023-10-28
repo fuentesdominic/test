@@ -1,0 +1,113 @@
+.full-login-page {
+    display: flex;
+}
+
+.login-leftside-div {
+    height: 100vh;
+    margin-left: auto;
+    width: 40vw;
+    background: linear-gradient(30deg, rgba(32, 71, 108, 0.8) 0%, rgba(185, 165, 116, 0.9) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+
+.login-form-div {
+    height: 100vh;
+    margin: auto ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}   
+
+.login-form-title {
+    font-size: 72px;
+}
+
+.login-input-span {
+    position: absolute;
+}
+
+.login-input-form {
+    background-color: #1b386326;
+    border-radius: 50px;
+    border: 2px solid #1b212b26;
+    height: 42px;
+    position: relative;
+    width: 600px;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.login-mail-icon {
+    /* position: absolute; */
+    font-size: 18px;
+    left: 3.4rem;
+}
+
+.login-show-hide-btn {
+    /* position: relative; */
+    /* left: 1.6rem; */
+    margin: auto;
+}
+
+.login-btn {
+    background-color: #1B3864;
+    border-radius: 50px;
+    height: 42px;
+    width: 280px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 1);
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+}
+
+.login-btn:hover {
+    background-color: #39609b;
+    transform: scale(1.01);
+  }
+
+.forget-password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0.1rem;
+}
+
+.forget-password:hover {
+    text-decoration: underline;
+}
+
+.login-big-ellipse {
+    position: absolute;
+    background: linear-gradient(160deg, rgba(31.61, 71.53, 108.38, 0.78) 30%, rgba(184.88, 165.46, 115.55, 0.91) 100%);
+    right: 100px;
+    top: 45px;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+  }
+
+  .login-small-ellipse {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    right: 200px;
+    top: 160px;
+    border-radius: 50%;
+    background: linear-gradient(75deg, rgb(27.47, 56.43, 99.88) 0%, rgb(184.88, 165.46, 115.55) 100%);
+  }
+
+  .login-polygon {
+    clip-path: polygon(40% 5%, 55% 100%, 25% 100%);
+    transform: rotate(220deg);
+    /* might need to make this from bottom */
+    top: 880px;
+    right: 650px;
+    position: absolute;
+    background: linear-gradient(180deg, #1B3864 10%, #B9A574 100%);
+  }

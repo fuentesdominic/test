@@ -61,7 +61,7 @@
     background: linear-gradient(180deg, #1B3864 10%, #B9A574 100%);
   }
 
-  .input-label {
+  .r-input-span {
     position: absolute;
     top: -17px;
     left: 4rem;
@@ -76,7 +76,7 @@
     margin: 1rem;
   }
 
-  .input-container {
+  .r-input-container {
     position: relative;
     margin: 2rem;
   }
@@ -86,7 +86,7 @@
     font-size: 18px;
   }
 
-  .input-form {
+  .r-input-form {
     background-color: #1b386326;
     border-radius: 50px;
     border: 2px solid #1b212b26;
@@ -95,21 +95,21 @@
     width: 750px;
   }
 
-  .mail-icon {
+  .r-mail-icon {
     position: absolute;
     font-size: 18px;
     left: 1.6rem;
     top: 15px;
   }
 
-  .user-icon {
+  .r-user-icon {
     position: absolute;
     font-size: 18px;
     left: 1.6rem;
     top: 15px;
   } 
 
-  .show-hide-btn {
+  .r-show-hide-btn {
     position: absolute;
     left: 1.3rem;
     top: 15px;
@@ -135,25 +135,26 @@
     transform: scale(1.01);
   }
 
-  .btm-div {
+  .r-btm-div {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     margin-bottom: 5rem;
     height: 1.5rem;
   }
 
-  .btm-question {
+  .r-btm-question {
     margin-right: 5px;
   }
 
-  .btm-link {
+  .r-btm-link {
     color: #000000;
     font-weight: 700;
     text-decoration: none;
   }
 
-  .btm-link:hover {
+  .r-btm-link:hover {
     text-decoration: underline;
   }
 
