@@ -147,5 +147,16 @@
     margin-right: 5px;
   }
 
+  .btm-link {
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .btm-link:hover {
+    text-decoration: underline;
+  }
+
+
 
 

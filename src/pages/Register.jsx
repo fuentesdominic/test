@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom"
 import "../pages/Style.css";
 import { IoMdMail } from 'react-icons/io';
 import { FaUserAlt } from 'react-icons/fa';
@@ -36,7 +37,7 @@ const Register = () => {
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
-  }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -108,6 +109,8 @@ const Register = () => {
           )}
         </div>
 
+        
+        {formValues.password && (
         <div className="input-container">
           <span className="input-label" htmlFor="confirmPassword"> Confirm Password</span>
           <input
@@ -131,7 +134,7 @@ const Register = () => {
             </button>
           )}
         </div>
-
+          )}
       </form>
 
         <button disabled={!formValues.email ||
@@ -141,7 +144,7 @@ const Register = () => {
            className="register-btn">Get Started</button>
       <div className="btm-div">
         <p className="btm-question">Already have an account?</p>
-        <h3 className="btm-link" to="/sign-in">Login</h3>
+        <Link className="btm-link" to="/login">Login</Link>
       </div>
     </div>
   );
