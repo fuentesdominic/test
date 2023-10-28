@@ -17,11 +17,21 @@ const Register = () => {
     confirmPassword: ''
   });
 
+  // logic for password eyes
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isPasswordButtonVisible, setIsPasswordButtonVisible] = useState(true);
 
+  
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
+  };
+  
+  // logic for confrim password eyes
+  const [isConfirmPasswordVisible, setisConfirmPasswordVisible] =useState(false);
+  const [isConfirmPasswordButtonVisible, setIsConfirmPasswordButtonVisible] =useState(true);
+
+  const toggleConfirmPasswordVisibility = () => {
+    setisConfirmPasswordVisible(!isConfirmPasswordVisible);
   };
 
   const handleChange = (e) => {
@@ -79,7 +89,7 @@ const Register = () => {
           <input
             onChange={handleChange}
             name="password"
-            type="password"
+            type={isPasswordVisible ? "text" : "password"}
             className="input-form"
             value={formValues.password}
             required
@@ -103,18 +113,18 @@ const Register = () => {
           <input
             onChange={handleChange}
             name="confirmPassword"
-            type={isPasswordVisible ? "text" : "password"}
+            type={isConfirmPasswordVisible ? "text" : "password"}
             className="input-form"
             value={formValues.confirmPassword}
             required
           />
-          {isPasswordButtonVisible && (
+          {isConfirmPasswordButtonVisible && (
             <button
               type="button"
-              onClick={togglePasswordVisibility}
+              onClick={toggleConfirmPasswordVisibility}
               className="show-hide-btn"
             >
-              {isPasswordVisible ?
+              {isConfirmPasswordVisible ?
                 <FaEye />
                 :
                 <FaEyeSlash />}
@@ -123,7 +133,7 @@ const Register = () => {
         </div>
 
       </form>
-      
+
         <button disabled={!formValues.email ||
           (!formValues.password &&
             formValues.confirmPassword === formValues.password
