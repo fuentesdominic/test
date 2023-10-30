@@ -67,6 +67,7 @@ const Register = () => {
             name="email"
             type="email"
             className="r-input-form"
+            // placeholder="Email"
             value={formValues.email}
             required
           />

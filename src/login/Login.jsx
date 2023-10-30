@@ -20,7 +20,7 @@ const Login = () => {
     const [isPasswordButtonVisible, setIsPasswordButtonVisible] = useState(true);
 
     const togglePasswordVisibility = () => {
-        setIsPasswordVisible(!setIsPasswordVisible)
+        setIsPasswordVisible(!isPasswordVisible);
     };
 
     const handleChange = (e) => {
@@ -39,25 +39,27 @@ const Login = () => {
             <div className="login-form-div">
                 <h1 className="login-form-title">Welcome Back</h1>
                 <form className="login-form">
-                    <div className="l-input-container" onSubmit={handleSubmit} >
+                    <div className="login-input-container" onSubmit={handleSubmit} >
                         <IoMdMail className="login-mail-icon" />
-                        <span className="login-input-span" htmlFor="">Email</span>
+                        {/* <span className="login-input-span" htmlFor="email">Email</span> */}
                         <input
                             onChange={handleChange}
                             name="email"
                             type="email"
                             className="login-input-form"
+                            placeholder="Email"
                             value={formValues.email}
                             required
                         />
                     </div>
                     <div className="login-input-container">
-                        <span className="login-input-span" htmlFor="password">Password</span>
+                        {/* <span className="login-input-span" htmlFor="password">Password</span> */}
                         <input
                             onChange={handleChange}
                             name="password"
                             type={isPasswordVisible ? "text" : "password"}
                             className="login-input-form"
+                            placeholder="Password"
                             value={formValues.password}
                             required
                         />
@@ -77,17 +79,18 @@ const Login = () => {
                     <button className="login-btn" disabled={!formValues.email || !formValues.password}>Login</button>
                 </form>
                 {/* making p tag a link */}
-                <p className="forget-password">Forget password?</p>
+                <Link to="" className="forget-password">Forget password?</Link>
             </div>
-            <div className="login-leftside-div">
+            <div className="login-rightside-div">
                 <svg className="login-big-ellipse" xmlns="http://www.w3.org/2000/svg" fill="none"></svg>
 
                 <svg className="login-small-ellipse" xmlns="http://www.w3.org/2000/svg" fill="none"></svg>
 
                 <svg className="login-polygon" xmlns="http://www.w3.org/2000/svg" fill="none"></svg>
 
-                <h1 className="login-title">New Here?</h1>
-                <p className="login-slogan">Sign up and level up your financial game!</p>
+                <h1 className="right-login-title">New Here?</h1>
+
+                <p className="login-slogan">Sign up to Invest in Your Financial Story... Your Next Chapter Awaits!</p>
 
                 <Link to="/register">
                     <button className="sign-up-btn">Sign Up</button>

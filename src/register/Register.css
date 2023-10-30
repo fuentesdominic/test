@@ -116,6 +116,7 @@
     font-size: 18px;
     background: transparent;
     border: none;
+    cursor: pointer;
   }
 
   .register-btn {
@@ -152,6 +153,7 @@
     color: #000000;
     font-weight: 700;
     text-decoration: none;
+    cursor: pointer;
   }
 
   .r-btm-link:hover {
